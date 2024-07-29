@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaChevronDown } from "react-icons/fa";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
+import { Outlet, Link } from 'react-router-dom';
 const AdminDashboard = () => {
   const [dashboardActive, setDashboardActive]=useState("sidebar-button-active");
   const [employeeActive, setEmployeeActive]=useState("");
@@ -29,6 +30,7 @@ const AdminDashboard = () => {
     setTrainingActive("");
     setDocumentActive("");
     setLeavesActive("");
+    navigate("dashboard");
   }
   const handleEmployeeClick = ()=>{
     setDashboardActive("");
@@ -37,6 +39,7 @@ const AdminDashboard = () => {
     setTrainingActive("");
     setDocumentActive("");
     setLeavesActive("");
+    navigate("all-employee");
   }
   const handleAnnouncementClick = ()=>{
     setDashboardActive("");
@@ -215,7 +218,12 @@ const AdminDashboard = () => {
             <span className={headerNotificationOption}>You have got a new message!</span>
           </div>
         </header>
-        <h3 className="title">Admin Dashboard</h3>
+
+
+        <Outlet /> {/* This is where nested routes will render */}
+
+
+
       </div>
       
     </div>
