@@ -215,7 +215,7 @@ const AdminDashboard = () => {
             <span className={headerNotificationOption}>You have got a new message!</span>
           </div>
         </header>
-        <h3 className="title">These credentials which i used to log in are for intial use only they are not real, Once the project finishes Admin sets real credentials which only they know.</h3>
+        <h3 className="title">Admin Dashboard</h3>
       </div>
       
     </div>
