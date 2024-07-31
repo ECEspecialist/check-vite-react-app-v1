@@ -3,11 +3,12 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import useId from './Auth/Id.jsx';
 import Login from './Windows/Login/Login.jsx'
 import AdminDashboard from './Windows/Admin/AdminDashboard.jsx'
-import UserDashboard from './Windows/User/Dashboard.jsx'
+import UserDashboard from './Windows/User/UserDashboard.jsx'
 import NoPage from './Windows/Info/NoPage.jsx';
 import Password from './Windows/Login/Password.jsx'
 import AllEmployeeComponent from './Components/AllEmployeeComponent/AllEmployeeComponent.jsx';
 import DashboardComponent from './Components/DashboardComponent/DashboardComponent.jsx';
+
 const App = () => {
   const isAdmin=useId((state)=>state.isAdmin);
   const isLogin=useId((state)=>state.isLogin);
@@ -35,7 +36,10 @@ const App = () => {
         ):(
           <>
             <Route path='/' element={<UserDashboard/>}/>
-            <Route path='/user' element={<UserDashboard/>}/>
+            <Route path='/user' element={<UserDashboard/>}>
+              <Route index element={<DashboardComponent/>}/>
+              <Route path='dashboard' element={<DashboardComponent/>}/>
+            </Route>
             <Route path="*" element={<NoPage/>}/>
           </>
         )}

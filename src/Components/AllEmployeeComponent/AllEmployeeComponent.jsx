@@ -1,10 +1,9 @@
-
-
-
-function AllEmployeeComponent(){
+function DashboardComponent(){
                return(
-                              <div>AllEmployee Component</div>
+                              <div className="employee-component">
+                                             welcome to employee list
+                              </div>
                )
 }
 
-export default AllEmployeeComponent
+export default DashboardComponent

@@ -50,14 +50,14 @@ function Login(){
       alert("Welcome User");
       setIsLogin(true);
       setIsAdmin(false);
-      navigate('/user-dashboard');
+      navigate('/user');
       setKeepMeLogin(ValueForKeep);
     }
     else if(username==='whoami'&&password==='admin'){
       alert("Welcome Admin");
       setIsLogin(true);
       setIsAdmin(true);
-      navigate('/admin-dashboard');
+      navigate('/admin');
       setKeepMeLogin(ValueForKeep);
     }
     else{

@@ -4,7 +4,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-  
+
+body{
+  background-color: #F5F5F5;
+}
+
 a {
   text-decoration: unset;
   transition: 1s;
@@ -233,7 +237,7 @@ input::placeholder{
   margin-bottom: 35px;
 }
 .dashboard-container{
-  background-color: #E0E0E0;
+  background-color: #F5F5F5;
   display: flex;
 }
 .sidebar-container{
@@ -246,6 +250,8 @@ input::placeholder{
   align-items: center;
   border-right: 0.5px solid var(--color-light-black);
   border-top: 0.5px solid var(--color-light-black);
+  position: fixed;
+  background-color: #E0E0E0;
 }
 
 .sidebar-button{
@@ -318,6 +324,14 @@ input::placeholder{
 }
 .main-container{
   width: 80%;
+  background-color: #F5F5F5;
+  height: 100vh;
+  margin-left: auto;
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-top: 37px;
 }
 .main-container-header{
   display: flex;
@@ -331,7 +345,12 @@ input::placeholder{
   margin-left: 0.1px;
   gap: 40px;
   font-family: var(--font-family-primary);
-  position: relative;
+  background-color: #E0E0E0;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  width: 80%;
+  top: 0;
 }
 
 .main-container-language-icon-wrap{
@@ -399,3 +418,270 @@ input::placeholder{
   display: none;
 }
 
+/* dashboard component style starts from here  */
+.dashboard-component,.employee-component{
+  padding: 25px 22px;
+}
+.dashboard-component-top{
+  background-color: white;
+  border-radius: 7px;
+  padding: 11px 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.dashboard-component-top-item{
+  background-color: rgba(0, 0, 0, 0.625);
+  color: white;
+  width: 24%;
+  border-radius: 7px;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  gap: 5px;
+}
+.dashboard-component-top-item::after{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 5px;
+  background-color: red;
+  top: 0;
+  left: 0;
+}
+.dashboard-component-top-top{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.dashboard-component-top-title{
+  display: flex;
+  flex-direction: column;
+}
+.dashboard-component-view-link-wrap{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dashboard-component-top-title-l1{
+  font-family: var(--font-family-primary);
+  color: #D5D5DF;
+  line-height: 25px;
+}
+.dashboard-component-top-title-l2{
+  font-family: var(--font-family-primary);
+  color: #d5d5dfa9;
+  line-height: 25px;
+}
+
+.dashboard-component-top-image{
+  width: 70px;
+}
+.dashboard-component-view-text{
+  font-family: var(--font-family-primary);
+  color: #1E88E5;
+  font-size: 16px;
+}
+
+.dashboard-component-icon{
+  color: #1E88E5;
+}
+
+.dashboard-component-middle{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 27px;
+}
+
+.dashboard-component-middle-left{
+  background-color: white;
+  padding: 10px 0px;
+  border-radius: 7px;
+  width: 65%;
+}
+
+.dashboard-middle-left-title{
+  font-family: var(--font-family-primary);
+  color: #424242;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: 20px;
+}
+
+.middle-left-list-top{
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-list-top-item{
+  font-family: var(--font-family-primary);
+  color: #979393;
+  font-size: 12px;
+  width: 25%;
+  padding: 10px 0px;
+  padding-left: 20px;
+}
+.left-list-top-item-status3{
+  position: relative;
+}
+.left-list-top-item-status3::after{
+  content: "STATUS";
+  position: absolute;
+  font-family: var(--font-family-primary);
+  color: #979393;
+  font-size: 12px;
+  top: 10px;
+  left: 45px;
+}
+.left-list-top-item-status1{
+  position: relative;
+}
+.left-list-top-item-status1::after{
+  content: "APPLICATION TYPE";
+  position: absolute;
+  font-family: var(--font-family-primary);
+  color: #979393;
+  font-size: 12px;
+  top: 10px;
+  left: 42px;
+}
+.left-list-top-item-status2{
+  position: relative;
+}
+.left-list-top-item-status2::after{
+  content: "DURATION";
+  position: absolute;
+  font-family: var(--font-family-primary);
+  color: #979393;
+  font-size: 12px;
+  top: 10px;
+  left: 65px;
+}
+.list-top-contents{
+  color: var(--color-sidebar-icon);
+  padding: 10px 0px;
+  padding-left: 20px;
+}
+.background-blue{
+  background-color: #FAFAFA;
+}
+
+.list-top-special-pending{
+  position: relative;
+  background-color: unset;
+  width: 15%;
+}
+
+.list-top-special-pending::after{
+  border-radius: 7px;
+  content: "Pending";
+  width: 60%;
+  height: 80%;
+  top: 4px;
+  left: -25px;
+  color: #FF9600;
+  background: #FFF3DE;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-top-special-approved{
+  width: 15%;
+  position: relative;
+  background-color: unset;
+}
+
+.list-top-special-approved::after{
+  border-radius: 7px;
+  content: "Approved";
+  width: 60%;
+  height: 80%;
+  top: 4px;
+  left: -25px;
+  color: #2196F3;
+  background: #E3F2FD;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-top-special-rejected{
+  position: relative;
+  background-color: unset;
+  width: 15%;
+}
+
+.list-top-special-rejected::after{
+  border-radius: 7px;
+  content: "Rejected";
+  width: 60%;
+  height: 80%;
+  top: 4px;
+  left: -25px;
+  color: #EF6E68;
+  background: #FFEAED;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-side-top-item-bottom{
+  margin-left: 35px;
+  gap: 35px;
+  margin-bottom: 50px;
+  margin-top: 40px;
+  font-family: var(--font-family-primary);
+  color: #616161;
+  font-size: 13px;
+}
+
+.left-side-top-item-bottom-pending{
+  position: relative;
+}
+
+.left-side-top-item-bottom-pending::after{
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background-color: #FF9600;
+  left: -15px;
+  top: 2px;
+}
+.left-side-top-item-bottom-approved{
+  position: relative;
+}
+
+.left-side-top-item-bottom-approved::after{
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background-color: #2196F3;
+  left: -15px;
+  top: 2px;
+}
+.left-side-top-item-bottom-rejected{
+  position: relative;
+}
+
+.left-side-top-item-bottom-rejected::after{
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background-color: #EF6E68;
+  left: -15px;
+  top: 2px;
+}
