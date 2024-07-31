@@ -61,4 +61,13 @@ const approvalData = [
                ]
 ];
 
+const newEntry = [
+  { id: 37, date: '03/05/2024' },
+  { id: 38, type: 'Sick leave' },
+  { id: 39, duration: '01 (15-06 June)' },
+  { id: 40, status: 'Pending' }
+];
+
+approvalData.push(newEntry);
+
 export default approvalData

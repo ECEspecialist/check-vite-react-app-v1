@@ -685,3 +685,10 @@ input::placeholder{
   left: -15px;
   top: 2px;
 }
+
+.dashboard-component-middle-right{
+  width: 32%;
+  background-color: white;
+  padding: 12px 10px; 
+  border-radius: 7px;
+}

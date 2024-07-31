@@ -4,7 +4,7 @@ import im2 from "../../Image/im2.png";
 import im3 from "../../Image/im3.png";
 import im4 from "../../Image/im4.png";
 import approvalData from '../../Data/Approval'
-
+import CalendarApp from "../Calendar/Calendar";
 function DashboardComponent(){
                return(
                               <div className="dashboard-component">
@@ -107,7 +107,9 @@ function DashboardComponent(){
                                                                                           <li className="left-side-top-item-bottom-pending">Pending</li>
                                                                            </ul>
                                                             </div>
-                                                            <div className="dashboard-component-middle-right"></div>
+                                                            <div className="dashboard-component-middle-right">
+                                                                           <CalendarApp/>     
+                                                            </div>
                                              </div>
                               </div>
                )
